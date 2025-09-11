@@ -5,7 +5,7 @@ def get_ticket_purchase(remaining_tickets):
     while True:
         try:
             num_tickets = int(
-                input(f"How many tickets would you like to purchase? (You may buy up to 4, {remaining_tickets} remaining): "))
+                input(f"Enter the number of tickets you wish to buy (1-4, {remaining_tickets} remaining): "))
             if 1 <= num_tickets <= 4 and num_tickets <= remaining_tickets:
                 return num_tickets
             elif num_tickets > remaining_tickets:
@@ -20,7 +20,7 @@ def sell_tickets():
 
     total_tickets = 10
     remaining_tickets = total_tickets
-    buyer_count = 0
+    total_buyers = 0
 
     print("Welcome to the Cinema Ticket Pre-Sale!")
 
@@ -28,11 +28,11 @@ def sell_tickets():
         tickets_to_buy = get_ticket_purchase(remaining_tickets)
 
         remaining_tickets -= tickets_to_buy
-        buyer_count += 1
+        total_buyers += 1
         print(f"Purchase successful! {remaining_tickets} tickets remaining.")
 
     print("\nAll tickets have been sold!")
-    print(f"Total number of buyers: {buyer_count}")
+    print(f"Total number of buyers: {total_buyers}")
 
 if __name__ == "__main__":
     sell_tickets()
