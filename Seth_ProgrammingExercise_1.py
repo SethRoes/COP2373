@@ -20,7 +20,7 @@ def sell_tickets():
 
     total_tickets = 10
     remaining_tickets = total_tickets
-    total_buyers = 0
+    buyer_count = 0
 
     print("Welcome to the Cinema Ticket Pre-Sale!")
 
@@ -28,11 +28,11 @@ def sell_tickets():
         tickets_to_buy = get_ticket_purchase(remaining_tickets)
 
         remaining_tickets -= tickets_to_buy
-        total_buyers += 1
+        buyer_count += 1
         print(f"Purchase successful! {remaining_tickets} tickets remaining.")
 
     print("\nAll tickets have been sold!")
-    print(f"Total number of buyers: {total_buyers}")
+    print(f"Total number of buyers: {buyer_count}")
 
 if __name__ == "__main__":
     sell_tickets()
